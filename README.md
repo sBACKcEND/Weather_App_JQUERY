@@ -2,7 +2,7 @@
 
 ---
 
-Link: https://sbackcend.github.io/Weather_App_JQUERY/
+Link: https://sbackcend.github.io/Weather_app_javascript/
 
 ---
 
