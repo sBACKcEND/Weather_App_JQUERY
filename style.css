@@ -28,6 +28,47 @@ body {
   padding: 50px;
 }
 
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 46px;
+  width: 46px;
+  background: #7c7c7c2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 44px;
+  width: 44px;
+  background: #7c7c7c6b;
+  color: white;
+}
+
+.searchbar {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background-color: #7c7c7c2b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: 130px;
+}
+
 .app h1 {
   font-size: 60px;
   margin-left: -15px;
@@ -41,4 +82,17 @@ body {
 .app h3 {
   font-weight: 300;
   letter-spacing: 5px;
+}
+
+.weather-description {
+  text-transform: capitalize;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+#icon {
+  margin-left: -10px;
 }
