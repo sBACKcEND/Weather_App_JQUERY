@@ -1,4 +1,4 @@
-# Weather_App_JQUERY
+# Weather_app_javascript
 
 ---
 
