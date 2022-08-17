@@ -1,23 +1,33 @@
 $(document).ready(function () {
-  getWeather();
-
-  function getWeather() {
+  function getWeather(cityName) {
+    let city = cityName;
     let accessKey = "a1da4413ffbaf37616fb813495d8358d";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=klaipeda,lt&APPID=${accessKey}`;
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${accessKey}`;
 
     // console.log(apiURL);
 
     $.get(apiURL, function (data) {
       let { name } = data;
-      let { icon } = data.weather[0];
       document.body.style.backgroundImage =
         "url('https://source.unsplash.com/1600x900/?" + name + "')";
+      let { icon } = data.weather[0];
 
-      $("#city").html(data.name);
-      $("#temperature").html(Math.floor(data.main.temp - 273) + "°C");
-      $("#weather_description").html(data.weather[0].description);
       document.querySelector("#icon").src =
         "https://openweathermap.org/img/wn/" + icon + ".png";
+      $("#city").html(data.name + "," + " " + data.sys.country);
+      $("#temperature").html(Math.floor(data.main.temp - 273) + "°C");
+      $("#weather_description").html(data.weather[0].description);
+      $("#wind").html("Wind speed: " + data.wind.speed + "km/h");
+      $("#humidity").html("Humidity: " + data.main.humidity + "%");
     });
   }
+
+  $("#city_form").submit(function (event) {
+    event.preventDefault();
+    let cityInput = $("#city_name");
+    let cityName = cityInput.val();
+    cityInput.val("");
+
+    getWeather(cityName);
+  });
 });
