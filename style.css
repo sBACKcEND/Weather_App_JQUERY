@@ -62,7 +62,7 @@ button {
   letter-spacing: 5px;
 }
 
-.weather-description {
+.weather_description {
   text-transform: capitalize;
   width: 150px;
 }
