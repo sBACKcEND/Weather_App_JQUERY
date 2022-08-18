@@ -15,12 +15,8 @@
 
     <div class="app">
         <div class="search">
-            <form id="city_form" class="needs-validation" action="" method="post" validate>
-                <input id="city_name" type="text" class="form-control text-white" placeholder="Search for a city"
-                    required>
-                <div class="invalid-feedback">
-                    Please provide a valid city.
-                </div>
+            <form id="city_form" name="myForm" action="" method="post">
+                <input id="city_name" type="text" name="cname" class="text-white" placeholder="Search for a city">
                 <button id="submit_city" class="btn btn-danger btn-lg w-45" type="submit">SUBMIT</button>
             </form>
         </div>

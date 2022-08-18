@@ -1,4 +1,15 @@
 $(document).ready(function () {
+  $("#city_form").submit(function (event) {
+    event.preventDefault();
+    let cityInput = $("#city_name");
+    let cityName = cityInput.val();
+    if (cityName == "" || cityName != "name") {
+      alert("Please provide a valid city");
+    }
+    cityInput.val("");
+    getWeather(cityName);
+  });
+
   function getWeather(cityName) {
     let city = cityName;
     let accessKey = "a1da4413ffbaf37616fb813495d8358d";
@@ -21,13 +32,4 @@ $(document).ready(function () {
       $("#humidity").html("Humidity: " + data.main.humidity + "%");
     });
   }
-
-  $("#city_form").submit(function (event) {
-    event.preventDefault();
-    let cityInput = $("#city_name");
-    let cityName = cityInput.val();
-    cityInput.val("");
-
-    getWeather(cityName);
-  });
 });
