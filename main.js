@@ -3,7 +3,9 @@ $(document).ready(function () {
     event.preventDefault();
     let cityInput = $("#city_name");
     let cityName = cityInput.val();
-    if (cityName == "" || cityName != "name") {
+    if (cityName == "")
+    // || (cityName != "name")) 
+    {
       alert("Please provide a valid city");
     }
     cityInput.val("");
