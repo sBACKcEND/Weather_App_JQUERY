@@ -3,11 +3,6 @@ $(document).ready(function () {
     event.preventDefault();
     let cityInput = $("#city_name");
     let cityName = cityInput.val();
-    if (cityName == "")
-    // || (cityName != "name")) 
-    {
-      alert("Please provide a valid city");
-    }
     cityInput.val("");
     getWeather(cityName);
   });
@@ -16,7 +11,6 @@ $(document).ready(function () {
     let city = cityName;
     let accessKey = "a1da4413ffbaf37616fb813495d8358d";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${accessKey}`;
-
     // console.log(apiURL);
 
     $.get(apiURL, function (data) {
@@ -32,6 +26,12 @@ $(document).ready(function () {
       $("#weather_description").html(data.weather[0].description);
       $("#wind").html("Wind speed: " + data.wind.speed + "km/h");
       $("#humidity").html("Humidity: " + data.main.humidity + "%");
+    }).catch(function () {
+      Swal.fire({
+        icon: 'info',
+        title: 'Oops...',
+        text: 'Please provide a valid city!',
+      })
     });
   }
 });
