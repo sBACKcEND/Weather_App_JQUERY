@@ -32,6 +32,14 @@ $(document).ready(function () {
       $("#weather_description").html(data.weather[0].description);
       $("#wind").html("Wind speed: " + data.wind.speed + "km/h");
       $("#humidity").html("Humidity: " + data.main.humidity + "%");
+    }).catch(function(data) {
+      // Catch funkcija suveikia, kai gaunamas klaidos pranesimas.
+      // data kintamasis turi informacija apie grazinta rezultata
+      // console.log(data) pagalba galime matyti duomenis ir atvaizduoti reikiama teksta
+      // Arba aprasyti, savo zinute, kaip pvz: "Ivyko klaida."
+      console.log(data);
+      alert(data.responseJSON.message);
+      // alert('Oops, something went wrong');
     });
   }
 });
