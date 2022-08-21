@@ -74,14 +74,3 @@ button {
   margin-bottom: 15px;
   margin-left: 60px;
 }
-
-@media screen and (max-width: 1200px) {
-  body {
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .app {
-    margin-bottom: 100%;
-  }
-}
