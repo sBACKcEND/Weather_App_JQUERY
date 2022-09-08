@@ -9,8 +9,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 550px;
+  height: 500px;
   margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 50px;
   background: #222;
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
   background-size: cover;
